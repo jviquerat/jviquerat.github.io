@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+    <!-- /*************************/ -->
+    <!-- /***** Initial stuff *****/ -->
+    <!-- /*************************/ -->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <title>Jonathan Viquerat</title>
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <!-- /*************************/ -->
+        <!-- /***** Front section *****/ -->
+        <!-- /*************************/ -->
+
+        <section class="front">
+            <div class="content">
+                <div class="header">
+                    <div class="upperCase title">Jonathan Viquerat</div>
+                    <div class="upperCase subtitle">Personal webpage</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- /***************************/ -->
+        <!-- /***** Profile section *****/ -->
+        <!-- /***************************/ -->
+
+        <section class="profile separateSection">
+            <div class="content">
+                <div class="picture">
+                    <img class="img-circle img-profile" src="img/me.jpg"/>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="description">
+                    <p>I am currently a research engineer in the CFL team at CEMEF, Sophia-Antipolis. My current work is concerned with the application of machine learning algorithms to CFD problems (see the MINDS project). Find out more about what I do below or by downloading my <a href="img/cv.pdf">résumé</a>. You can also find a list of the publications I was associated to <a href="https://scholar.google.fr/citations?user=guoJL5UAAAAJ&hl=fr">here</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- /****************************/ -->
+        <!-- /***** Timeline section *****/ -->
+        <!-- /****************************/ -->
+
+        <section class="timeline separateSection">
+            <div class="container">
+
+                <div class="timeline-block timeline-block-right">
+                    <div class="marker"></div>
+                    <div class="timeline-content">
+                        <h3>2018-2020</h3>
+                        <p><span>Research engineer</span> at CEMEF.</p>
+                        <p>Topic: Machine learning for CFD applications (see <a href=https://cfl-minds.github.io/>the MINDS project</a>)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block timeline-block-left">
+                    <div class="marker"></div>
+                    <div class="timeline-content">
+                        <h3>2015-2018</h3>
+                        <p><span>Research engineer</span> at INRIA.</p>
+                        <p>Topic: Development of a discontinuous Galerkin-based software suite (see <a href="https://diogenes.inria.fr/">here</a>)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block timeline-block-right">
+                    <div class="marker"></div>
+                    <div class="timeline-content">
+                        <h3>2012-2015</h3>
+                        <p><span>PhD in applied mathematics</span> and numerical simulation at INRIA.</p>
+                        <p>Topic: Discontinuous Galerkin time-domain methods for nano-optics (see <a href="https://hal.archives-ouvertes.fr/tel-01272010v10">here</a>)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block timeline-block-left">
+                    <div class="marker"></div>
+                    <div class="timeline-content">
+                        <h3>2009-2012</h3>
+                        <p><span>Engineering degree</span> in applied mathematics at ENSTA ParisTech</p>
+                        <p>Specialized in applied mathematics</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- /*****************************/ -->
+        <!-- /***** Portfolio section *****/ -->
+        <!-- /*****************************/ -->
+
+        <section class="portfolio separateSection">
+            <div class="content">
+                <div class="sectionTitle extraPadding upperCase">Selected works</div>
+
+                <!-- /***** Column 1 *****/ -->
+                <div class="column">
+
+                    <div class="figure">
+                        <img src="img/heat.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Deep reinforcement learning for conjugate heat transfer</div>
+                                    <p>I was recently involved in a project with E. Hachem, P. Meliga and H. Ghraieb concerned with the use of DRL for the passive control of heat transfer problems.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/passive.jpg">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">DRL for passive flow control</div>
+                                    <p>I am co-supervising the PhD of H. Ghraieb, who worked on passive flow control using single-step deep reinforcement learning. See related publication <a href="https://arxiv.org/abs/2006.02979">here</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/drag.jpg">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Drag prediction using CNN</div>
+                                    <p>I recently experimented with the training of a CNN on a dataset of arbitrary shapes to learn to predict drag coefficients at low Reynolds number. The code and datasets are <a href="https://github.com/cfl-minds/cnn_drag_prediction">open-source</a>. See related publication <a href="https://www.sciencedirect.com/science/article/pii/S0045793020302164">here</a> and <a href="https://arxiv.org/abs/1907.05090">here</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/diogenes.jpg">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Diogenes</div>
+                                    <p>Between 2015 and 2018, I have been leading the development of the <a href="https://diogenes.inria.fr/">Diogenes</a> software suite. It is based on discontinuous Galerkin methods, and is devoted to the solving of nanophotonics problems in time- and frequency-domain. It includes several advanced features, such as curvilinear cells, multi-element meshes, high-order polynomial expansions and others.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/colorFilterFieldMap.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">PBC with oblique incidence</div>
+                                    <p>I worked on the extension of the field transform technique to handle polychromatic plane wave analysis at oblique incidence with periodic boundary conditions in time-domain. Here, a doubly periodic transmittive color filter illuminated from below with a 30 degrees incidence angle. See related publication <a href="https://smai-jcm.centre-mersenne.org/article/SMAI-JCM_2019__5__131_0.pdf">here</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/modeConverter.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Polychromatic pulses in waveguides</div>
+                                    <p>I developed a specific source module able to take into account mode dispersion (index and field profile) to propagate polychromatic pulses in waveguides. The mode solution and the dispersion relation can be analytic, or provided through external files. Here, a TE01-to-TE02 mode converter is simulated on a 2 GHz large spectrum. See related publication <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/mop.31840">here</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/zoomSol.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Visualization module</div>
+                                    <p>I wrote a visualization module to post-process 3D results from the <a href="https://diogenes.inria.fr/">Diogenes</a> DGTD solver. This feature provides a sampling of the solution over a given plane by projecting it on quadrilaterals. The discontinuity at material interfaces is respected, and the geometry is fitted with a recursive cutting approach.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/curv.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Curvilinear elements in a nanosphere dimer</div>
+                                    <p>A part of my PhD was dedicated to the study of isoparametric elements in nanophotonics computations (see <a href="https://hal.archives-ouvertes.fr/tel-01272010v8">here</a>). Here, we show the resonance appearing in the gap between two metallic nanospheres discretized with quadratic tetrahedra.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- End column 1 -->
+
+                <!-- /***** Column 2 *****/ -->
+                <div class="column">
+
+                    <div class="figure">
+                        <img src="img/shape_opt.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Shape optimization using deep reinforcement learning</div>
+                                    <p>I have worked on the generation of 2D aerodynamic shapes from scratch using a deep reinforcement learning algorithm. See related publication <a href="https://arxiv.org/abs/1908.09885">here</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/unet.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Field prediction using U-nets</div>
+                                    <p>I am co-supervising the PhD of J. Chen, with whom we worked on the training of U-nets using a dataset of arbitrary shapes to learn to predict velocity and pressure fields at low Reynolds number. See related publication <a href="https://arxiv.org/abs/1910.13532">here</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/stripWaveguide.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Strip waveguide analysis</div>
+                                    <p>I added tools in the <a href="https://diogenes.inria.fr/">Diogenes</a> suite for the analysis of waveguides, such as time-domain sources computed from 2D frequency-domain field maps, or mode overlap computation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/blazedGrating.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">RCS computations</div>
+                                    <p>I added a module for the computation of Radar Cross Sections in the <a href="https://diogenes.inria.fr/">Diogenes</a> suite. It was succesfully validated on a blazed grating simulation, with an almost perfect 2.7 degrees deflection from the normal. The RCS is given in squared micrometers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/hybrid.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Multi-element meshes</div>
+                                    <p>The basis library of the <a href="https://diogenes.inria.fr/">Diogenes</a> software suite is able to handle multi-element meshes composed of both hexahedra and tetrahedra (reading, neighbor-finding, partitionning, ...). Here, a hybrid mesh processed for the Diogenes-HDGFD solver.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/layers.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Textured photovoltaic cells</div>
+                                    <p>We worked on the meshing and computation of realistically-textured photovoltaic cells from scattered plot data with <a href="http://www-sop.inria.fr/nachos/team_members/Alexis.Gobe/index.html">Alexis Gobe</a>. This is part of a collaboration between INRIA and the <a href="http://www.fz-juelich.de/portal/DE/Home/home_node.html">FZJ</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure">
+                        <img src="img/dielectricReflectarray.png">
+                        <div class="caption">
+                            <div class="blur"></div>
+                            <div class="captionContent">
+                                <div class="captionText">
+                                    <div class="captionTitle">Dielectric metasurface</div>
+                                    <p>During my PhD, I made a short numerical study on the effects of lithography defects on the behavior of reflectarrays (see <a href="https://hal.archives-ouvertes.fr/tel-01272010v8">here</a>). Here, a non-cartesian doubly-periodic anisotropic metasurface is used to deflect a normally-incident plane wave with a non-cartesian angle.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- End column 2 -->
+
+            </div>
+        </section>
+
+        <!-- /***************************/ -->
+        <!-- /***** Contact section *****/ -->
+        <!-- /***************************/ -->
+
+        <section class="contact separateSection">
+            <div class="content">
+                <div class="sectionTitle upperCase">Contact</div>
+                <a href="mailto:jonathan.viquerat@mines-paristech.fr">
+                    <i class="fa fa-envelope fa-2x fa-lg" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- /***********************/ -->
+        <!-- /***** Final stuff *****/ -->
+        <!-- /***********************/ -->
+
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+        <script src="js/index.js"></script>
+
+    </body>
+</html>

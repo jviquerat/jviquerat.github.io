@@ -1,0 +1,428 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**********************/
+/***** Main stuff *****/
+/**********************/
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    color: black;
+    background-color: white;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: rgb(77,128,165);
+}
+
+span {
+    color: rgb(77,128,165);
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 100;
+}
+
+section {
+    position: relative;
+    width: 100%;
+}
+
+.separateSection {
+    padding-top: 100px;
+}
+
+.upperCase {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sectionTitle {
+    font-weight: 100;
+    font-size: 35px;
+    padding-bottom: 30px;
+}
+
+.extraPadding {
+    padding-bottom: 70px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.listItem {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 100;
+}
+
+/*************************/
+/***** Front section *****/
+/*************************/
+
+.front {
+    height: 100%;
+    background: url(../img/front.jpg);
+    background-size: cover;
+    background-position: center;
+    display: table;
+}
+
+.front .content {
+    vertical-align: middle;
+    display: table-cell;
+    color: white;
+}
+
+.front .content .header {
+    text-align: center;
+}
+
+.front .content .header .title {
+    margin: 20px 20px 35px;
+    font-size: 60px;
+}
+
+.front .content .header .subtitle {
+    margin: 20px 20px 35px;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 900px) {
+    .front .content .header .title {
+	margin: 10px 10px 35px;
+	font-size: 40px;
+    }
+
+    .front .content .header .subtitle {
+	margin: 10px 10px 35px;
+	font-size: 20px;
+    }
+}
+
+/***************************/
+/***** Profile section *****/
+/***************************/
+
+.profile {
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding-bottom: 0px; 
+}
+
+.profile .content {
+    width: 100%;
+    text-align: center;
+}
+
+.profile .content .picture {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.profile .content .picture .img-profile {
+    width: 20%;
+    min-width: 200px;
+    max-width: 350px;
+}
+
+.profile .content .description {
+    margin: 0 auto;
+    width: 50%;
+    max-width: 800px;
+}
+
+/****************************/
+/***** Timeline section *****/
+/****************************/
+
+.container {
+   width: 100%;
+   padding: 150px 0px 100px 0px;
+   margin: 0px auto;
+   position: relative;
+   overflow: hidden;
+   background: url(../img/timeline.jpg);
+   background-size: cover;
+   background-position: center;
+}
+
+.container:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 50%;
+   margin-left: -1px;
+   width: 2px;
+   height: 100%;
+   background: white;
+   z-index: 1
+}
+
+.timeline-block {
+   width: -webkit-calc(50% + 8px);
+   width: -moz-calc(50% + 8px);
+   width: calc(50% + 8px);
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -moz-box;
+   display: flex;
+   -webkit-box-pack: justify;
+   -webkit-justify-content: space-between;
+   -moz-box-pack: justify;
+   justify-content: space-between;
+   clear: both;
+}
+
+.timeline-block-right {
+   float: right;
+}
+
+.timeline-block-left {
+   float: left;
+   direction: rtl
+}
+
+.marker {
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   border: 2px solid #F5F7FA;
+   background: gray;
+   margin-top: 10px;
+   z-index: 9999
+}
+
+.timeline-content {
+   width: 95%;
+   padding: 0 15px;
+   color: white;
+}
+
+.timeline-content h3 {
+   margin-top: 5px;
+   margin-bottom: 5px;
+   font-size: 25px;
+   font-weight: 500
+}
+
+.timeline-content span {
+   font-size: 15px;
+   color: white;
+   font-weight: 100;
+}
+
+.timeline-content p {
+   font-size: 14px;
+   line-height: 1.5em;
+   word-spacing: 1px;
+   color: white;
+   font-weight: 100;
+}
+
+@media screen and (max-width: 900px) {
+   .container:before {
+      left: 8px;
+      width: 2px;
+   }
+   .timeline-block {
+      width: 100%;
+      margin-bottom: 30px;
+   }
+   .timeline-block-right {
+      float: none;
+   }
+
+   .timeline-block-left {
+      float: none;
+      direction: ltr;
+   }
+}
+
+/*****************************/
+/***** Portfolio section *****/
+/*****************************/
+
+.portfolio {
+    width: 100%;
+    background: white;
+    color: black;
+}
+
+.portfolio .content {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;    
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.portfolio .content .column {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    max-width: 600px;
+    margin-top: 40px; /* Same as figure bottom margin */
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.portfolio .content .column .figure {
+    position: relative;
+    margin-bottom: 40px; /* Same as column top margin */
+    padding: 0px;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.portfolio .content .column .figure img{
+    width: 100%;
+    float: left;
+    vertical-align: top;
+    z-index: 4;
+}
+
+.portfolio .content .column .figure .caption{
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio .content .column .figure .caption .captionContent{
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.portfolio .content .column .figure .caption .captionContent .captionText{
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.portfolio .content .column .figure .caption .captionContent .captionText .captionTitle{
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.portfolio .content .column .figure .caption .captionContent .captionText p{
+    font-size: 15px;
+    font-weight: 100;
+}
+
+@media screen and (min-width: 1205px) { /* For when the two columns are side by side */
+
+    .portfolio .content .column .figure:hover .caption{
+	opacity: 1;
+    }
+    
+    .portfolio .content .column .figure .caption{
+	position: absolute;
+	cursor: default;
+	opacity: 0;
+	-webkit-transition:all 0.45s ease-in-out;
+	-moz-transition:all 0.45s ease-in-out;
+	-o-transition:all 0.45s ease-in-out;
+	-ms-transition:all 0.45s ease-in-out;
+	transition:all 0.45s ease-in-out;
+    }
+    
+    .portfolio .content .column .figure .caption .blur{
+	width: 100%;
+	height: 100%;    
+	position: absolute;
+	background-color: rgba(0,0,0,0.65);
+	z-index: 5;
+    }
+    
+    .portfolio .content .column .figure .caption .captionContent{
+	position: absolute;
+	z-index: 10;
+	color: #fff;
+    }
+    
+    .portfolio .content .column .figure .caption .captionContent .captionText{
+	padding-left: 10%;
+	padding-right: 10%;
+    }
+}
+
+@media screen and (max-width: 1205px) { /* For when the two columns are stacked */
+
+    .portfolio .content .column {
+	width: 80%;
+	margin-top: 0px;
+    }
+
+    .portfolio .content .column .figure .caption{
+	position: relative;
+	display: inline-block;
+	color: black;
+    }
+    
+    .portfolio .content .column .figure .caption .captionContent{
+    	position: relative;
+    }
+    
+    .portfolio .content .column .figure .caption .captionContent .captionText{
+    	padding: 10px;
+    }
+
+    .portfolio .content .column .figure .caption .captionContent .captionText .captionTitle{
+	text-transform: uppercase;
+	font-size: 18px;
+	margin-bottom: 20px;
+}    
+}
+
+/***************************/
+/***** Contact section *****/
+/***************************/
+
+.contact {
+    width: 100%;
+    height: 300px;
+    background-color: gray;
+    background: url(../img/back.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.contact .content {
+    width: 100%;
+    text-align: center;
+}
+
+.contact .content a {
+    color: white;
+}
+
+.contact .content a:hover {
+    -webkit-transition:all 0.45s ease-in-out;
+    -moz-transition:all 0.45s ease-in-out;
+    -o-transition:all 0.45s ease-in-out;
+    -ms-transition:all 0.45s ease-in-out;
+    transition:all 0.45s ease-in-out;
+    color: rgb(77,128,165);
+}
