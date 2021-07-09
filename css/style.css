@@ -198,7 +198,7 @@ section {
 
 .timeline-block-left {
    float: left;
-   direction: rtl
+   direction: rtl;
 }
 
 .marker {
@@ -213,8 +213,20 @@ section {
 
 .timeline-content {
    width: 95%;
-   padding: 0 15px;
-   color: white;
+   padding: 10px 15px 20px 15px;
+   color: black;
+   background: rgba(200,200,200,0.6);
+   border-radius: 20px;
+   border-style: solid;
+   border-width: 1px 1px;
+}
+
+.timeline-content-right {
+    margin: 0px 100px 0px 20px;
+}
+
+.timeline-content-left {
+    margin: 0px 20px 0px 100px;
 }
 
 .timeline-content h3 {
@@ -226,7 +238,7 @@ section {
 
 .timeline-content span {
    font-size: 15px;
-   color: white;
+   color: black;
    font-weight: 100;
 }
 
@@ -234,7 +246,7 @@ section {
    font-size: 14px;
    line-height: 1.5em;
    word-spacing: 1px;
-   color: white;
+   color: black;
    font-weight: 100;
 }
 
@@ -254,6 +266,14 @@ section {
    .timeline-block-left {
       float: none;
       direction: ltr;
+   }
+
+   .timeline-content-right {
+       margin: 0px 100px 0px 20px;
+   }
+
+   .timeline-content-left {
+       margin: 0px 100px 0px 20px;
    }
 }
 
