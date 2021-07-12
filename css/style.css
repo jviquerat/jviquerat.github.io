@@ -207,8 +207,7 @@ section {
     height: 16px;
     border: 2px solid white;
     background: white;
-    margin-top: 24px;
-/*    z-index: 0;*/
+    margin-top: 23px;
 }
 
 .timeline-content {
@@ -222,11 +221,11 @@ section {
 }
 
 .timeline-content-right {
-    margin: 0px 20px 0px 20px;
+    margin: 0px 20px 0px 10px;
 }
 
 .timeline-content-left {
-    margin: 0px 20px 0px 20px;
+    margin: 0px 10px 0px 20px;
 }
 
 .timeline-content h3 {
