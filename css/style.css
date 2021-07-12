@@ -202,13 +202,13 @@ section {
 }
 
 .marker {
-   width: 16px;
-   height: 16px;
-   border-radius: 50%;
-   border: 2px solid #F5F7FA;
-   background: gray;
-   margin-top: 10px;
-   z-index: 9999
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid white;
+    background: white;
+    margin-top: 24px;
+/*    z-index: 0;*/
 }
 
 .timeline-content {
@@ -222,11 +222,11 @@ section {
 }
 
 .timeline-content-right {
-    margin: 0px 100px 0px 20px;
+    margin: 0px 20px 0px 20px;
 }
 
 .timeline-content-left {
-    margin: 0px 20px 0px 100px;
+    margin: 0px 20px 0px 20px;
 }
 
 .timeline-content h3 {
