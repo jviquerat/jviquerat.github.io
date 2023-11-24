@@ -287,15 +287,15 @@ section {
 }
 
 .portfolio .content {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;    
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     padding-bottom: 80px;
     text-align: center;
 }
 
 .portfolio .content .column {
-    width: 45%;
+    width: 25%;
     display: inline-block;
     vertical-align: top;
     max-width: 600px;
