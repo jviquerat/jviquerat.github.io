@@ -13,7 +13,9 @@
             <a href="index.html" class="logo">JV.</a>
             <nav class="nav-links">
                 <a href="index.html">about</a>
-                <a href="blog.html">blog posts</a>
+                <a href="software.html">software</a>
+                <a href="gallery.html">gallery</a>
+                <a href="blog.html">blog</a>
             </nav>
         </div>
     </header>
@@ -22,7 +24,7 @@
         <section class="section">
             <h1>Jonathan Viquerat</h1>
             <p style="font-size: 1.2rem; color: var(--text-primary); max-width: 40rem;">
-                R&D engineer in the Lumerical team at Ansys. My work focuses on numerical electromagnetics.
+                I am currently an R&D engineer in the Lumerical team at Ansys. I have worked on a variety of things, including numerical electromagnetics, deep reinforcement learning, graph neural networks, as well as gradient-free and gradient-based optimization.
             </p>
             <p>
                 <a href="img/cv.pdf" class="text-link" target="_blank">résumé</a> &nbsp;•&nbsp;
@@ -84,179 +86,7 @@
             </div>
         </section>
 
-        <section class="section">
-            <h2>Selected works</h2>
-            <div class="portfolio-grid">
-
-                <!-- ROW 1 -->
-                <div class="portfolio-card">
-                    <img src="img/aneurysm.gif" alt="GNN models for flow computation in aneurysms">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">GNN for flow computation</span>
-                        <p class="portfolio-desc">Graph neural network models for flow computation in intracranial aneurysms with ERC Cure.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <img src="img/emstack.gif" alt="Mixed-variable optimization">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">Mixed-variable optimization</span>
-                        <p class="portfolio-desc">Extension of the PBO method to handle mixed discrete/continuous variables.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <img src="img/pentagon.gif" alt="Mesh algorithms">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">Mesh algorithms</span>
-                        <p class="portfolio-desc">Successive interface fittings of a pentagon on a base Delaunay mesh.</p>
-                    </div>
-                </div>
-
-                <!-- ROW 2 -->
-                <a href="https://github.com/jviquerat/beacon" class="portfolio-card" target="_blank">
-                    <img src="img/beacon.png" alt="A benchmark library for DRL-based flow control">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">Beacon</span>
-                        <p class="portfolio-desc">A benchmark library for DRL-based flow control in python.</p>
-                    </div>
-                </a>
-
-                <div class="portfolio-card">
-                    <img src="img/mixing.gif" alt="DRL for mixing">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">DRL for mixing</span>
-                        <p class="portfolio-desc">Learning to mix a passive scalar quantity using boundary velocities control.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <img src="img/turek.gif" alt="DRL for drag reduction">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">DRL drag reduction</span>
-                        <p class="portfolio-desc">Agent controlling two small jets at the top and bottom of a cylinder.</p>
-                    </div>
-                </div>
-
-                <!-- ROW 3 -->
-                <div class="portfolio-card">
-                    <img src="img/rayleigh.gif" alt="DRL for natural convection control">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">DRL for natural convection</span>
-                        <p class="portfolio-desc">Controlling the Rayleigh-Benard convection cell with bottom plate temperatures actuators.</p>
-                    </div>
-                </div>
-
-                <a href="https://arxiv.org/abs/2505.03778" class="portfolio-card" target="_blank">
-                    <img src="img/dgf.png" alt="Dragonfly">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">Dragonfly</span>
-                        <p class="portfolio-desc">A DRL library designed for modularity and easy experimentation in CFD.</p>
-                    </div>
-                </a>
-
-                <div class="portfolio-card">
-                    <img src="img/packing_pbo.gif" alt="PBO for packing">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">PBO for packing</span>
-                        <p class="portfolio-desc">Testing the PBO algorithm on packing problems.</p>
-                    </div>
-                </div>
-
-                <!-- ROW 4 -->
-                <a href="https://arxiv.org/abs/2304.12330" class="portfolio-card" target="_blank">
-                    <img src="img/shkadov.gif" alt="DRL for fluid film control">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">Fluid film control</span>
-                        <p class="portfolio-desc">DRL for fluid film control based on the Shkadov equations.</p>
-                    </div>
-                </a>
-
-                <a href="https://github.com/jviquerat/lbm" class="portfolio-card" target="_blank">
-                    <img src="img/lbm.gif" alt="LBM solver">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">LBM solver</span>
-                        <p class="portfolio-desc">A small python-based Lattice Boltzmann Method solver.</p>
-                    </div>
-                </a>
-
-                <a href="https://arxiv.org/abs/2104.06175" class="portfolio-card" target="_blank">
-                    <img src="img/lorenz_pbo.gif" alt="PBO">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">PBO</span>
-                        <p class="portfolio-desc">Optimization based on policy gradient methods and evolution strategies.</p>
-                    </div>
-                </a>
-
-                <!-- ROW 5 -->
-                <a href="https://github.com/jviquerat/dem" class="portfolio-card" target="_blank">
-                    <img src="img/dem.gif" alt="Discrete element method">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">DEM Solver</span>
-                        <p class="portfolio-desc">A small python-based Discrete Element Method solver.</p>
-                    </div>
-                </a>
-
-                <a href="https://arxiv.org/abs/2011.15035" class="portfolio-card" target="_blank">
-                    <img src="img/heat.png" alt="PBO for conjugate heat transfer">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">PBO for heat transfer</span>
-                        <p class="portfolio-desc">Passive control of heat transfer problems with single-step DRL.</p>
-                    </div>
-                </a>
-
-                <a href="https://diogenes.inria.fr/" class="portfolio-card" target="_blank">
-                    <img src="img/hybrid.png" alt="Multi-element meshes">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">Multi-element meshes</span>
-                        <p class="portfolio-desc">Handling multi-element meshes composed of hexahedra and tetrahedra.</p>
-                    </div>
-                </a>
-
-                <!-- ROW 6 -->
-                <a href="https://diogenes.inria.fr/" class="portfolio-card" target="_blank">
-                    <img src="img/diogenes.jpg" alt="Diogenes">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">Diogenes</span>
-                        <p class="portfolio-desc">DG software suite for nanophotonics computations in time- and frequency-domain.</p>
-                    </div>
-                </a>
-
-                <a href="https://smai-jcm.centre-mersenne.org/article/SMAI-JCM_2019__5__131_0.pdf" class="portfolio-card" target="_blank">
-                    <img src="img/colorFilterFieldMap.png" alt="PBC with oblique incidence">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">PBC oblique incidence</span>
-                        <p class="portfolio-desc">Field transform technique for polychromatic plane waves.</p>
-                    </div>
-                </a>
-
-                <a href="https://hal.archives-ouvertes.fr/tel-01272010v8" class="portfolio-card" target="_blank">
-                    <img src="img/curv.jpg" alt="Curvilinear elements in a nanosphere dimer">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">Curvilinear elements</span>
-                        <p class="portfolio-desc">Resonance in the gap between two metallic nanospheres.</p>
-                    </div>
-                </a>
-
-                <!-- ROW 7 -->
-                <a href="https://hal.archives-ouvertes.fr/tel-01272010v8" class="portfolio-card" target="_blank">
-                    <img src="img/dielectricReflectarray.png" alt="Dielectric metasurface">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">Dielectric metasurface</span>
-                        <p class="portfolio-desc">Effects of lithography defects on the behavior of reflectarrays.</p>
-                    </div>
-                </a>
-
-                <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/mop.31840" class="portfolio-card" target="_blank">
-                    <img src="img/modeConverter.png" alt="Polychromatic pulses in waveguides">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-title">Polychromatic pulses</span>
-                        <p class="portfolio-desc">Taking into account mode dispersion to propagate polychromatic pulses in waveguides.</p>
-                    </div>
-                </a>
-
-            </div>
-        </section>
+        
 
     </main>
 
