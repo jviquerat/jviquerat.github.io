@@ -1,406 +1,263 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Viquerat</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-    <!-- /*************************/ -->
-    <!-- /***** Initial stuff *****/ -->
-    <!-- /*************************/ -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">JV.</a>
+            <nav class="nav-links">
+                <a href="index.html">about</a>
+                <a href="blog.html">blog posts</a>
+            </nav>
+        </div>
+    </header>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
-
-        <title>Jonathan Viquerat</title>
-        <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" type="text/css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-
-        <!-- /*************************/ -->
-        <!-- /***** Front section *****/ -->
-        <!-- /*************************/ -->
-
-        <section class="front">
-            <div class="content">
-                <div class="header">
-                    <div class="upperCase title">Jonathan Viquerat</div>
-                    <div class="upperCase subtitle">Personal webpage</div>
-                </div>
-            </div>
+    <main class="main-content">
+        <section class="section">
+            <h1>Jonathan Viquerat</h1>
+            <p style="font-size: 1.2rem; color: var(--text-primary); max-width: 40rem;">
+                R&D engineer in the Lumerical team at Ansys. My work focuses on numerical electromagnetics.
+            </p>
+            <p>
+                <a href="img/cv.pdf" class="text-link" target="_blank">résumé</a> &nbsp;•&nbsp;
+                <a href="https://scholar.google.fr/citations?user=guoJL5UAAAAJ&hl=fr" class="text-link" target="_blank">google scholar</a> &nbsp;•&nbsp;
+                <a href="mailto:jonathanviquerat@gmail.com" class="text-link">email</a>
+            </p>
         </section>
 
-        <!-- /***************************/ -->
-        <!-- /***** Profile section *****/ -->
-        <!-- /***************************/ -->
+        <section class="section">
+            <h2>Experience</h2>
+            <div class="timeline">
 
-        <section class="profile separateSection">
-            <div class="content">
-                <div class="picture">
-                    <img class="img-circle img-profile" src="img/me.jpg"/>
-                </div>
-            </div>
-
-            <div class="content">
-                <div class="description">
-                    <p>I am currently a research engineer in the CFL team at CEMEF, Sophia-Antipolis. My current work is concerned with the application of machine learning algorithms to CFD problems (see <a href=https://cfl-minds.github.io/>the MINDS project</a>). Find out more about what I do below or by downloading my <a href="img/cv.pdf">résumé</a>. You can also find a list of the publications I was associated to <a href="https://scholar.google.fr/citations?user=guoJL5UAAAAJ&hl=fr">here</a>.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- /****************************/ -->
-        <!-- /***** Timeline section *****/ -->
-        <!-- /****************************/ -->
-
-        <section class="timeline separateSection">
-            <div class="container">
-
-                <div class="timeline-block timeline-block-right">
-                    <div class="marker"></div>
-                    <div class="timeline-content timeline-content-right">
-                        <h3>2018-2025</h3>
-                        <p><span>Research engineer</span> at CEMEF (Mines ParisTech)</p>
-                        <p>Topic: Machine learning for CFD applications</p>
+                <div class="timeline-item">
+                    <img src="img/ansys.png" class="timeline-logo" alt="ansys">
+                    <span class="timeline-date">2025 — Present</span>
+                    <div class="timeline-content">
+                        <h3>R&D engineer (Ansys - Lumerical)</h3>
+                        <p style="margin-top: 0.25rem;">Development of numerical electromagnetics software</p>
                     </div>
                 </div>
 
-                <div class="timeline-block timeline-block-left">
-                    <div class="marker"></div>
-                    <div class="timeline-content timeline-content-left">
-                        <h3>2015-2018</h3>
-                        <p><span>Research engineer</span> at INRIA</p>
-                        <p>Topic: Development of a discontinuous Galerkin-based software suite (see <a href="https://diogenes.inria.fr/">here</a>)</p>
+                <div class="timeline-item">
+                    <img src="img/mines.png" class="timeline-logo" alt="mines">
+                    <span class="timeline-date">2018 — 2025</span>
+                    <div class="timeline-content">
+                        <h3>Research engineer (Mines Paris - CEMEF)</h3>
+                        <p style="margin-top: 0.25rem;">Machine learning for CFD applications</p>
                     </div>
                 </div>
 
-                <div class="timeline-block timeline-block-right">
-                    <div class="marker"></div>
-                    <div class="timeline-content timeline-content-right">
-                        <h3>2012-2015</h3>
-                        <p><span>PhD in applied mathematics</span> and numerical simulation at INRIA</p>
-                        <p>Topic: Discontinuous Galerkin time-domain methods for nano-optics (see <a href="https://hal.archives-ouvertes.fr/tel-01272010v10">here</a>)</p>
+                <div class="timeline-item">
+                    <img src="img/inria.png" class="timeline-logo" alt="INRIA">
+                    <span class="timeline-date">2015 — 2018</span>
+                    <div class="timeline-content">
+                        <h3>Research engineer (INRIA)</h3>
+                        <p style="margin-top: 0.25rem;">Development of a discontinuous Galerkin library (<a href="https://diogenes.inria.fr/" class="text-link" target="_blank">Diogenes</a>)</p>
                     </div>
                 </div>
 
-                <div class="timeline-block timeline-block-left">
-                    <div class="marker"></div>
-                    <div class="timeline-content timeline-content-left">
-                        <h3>2009-2012</h3>
-                        <p><span>Engineering degree</span> in applied mathematics at ENSTA ParisTech</p>
-                        <p>Specialized in applied mathematics</p>
+                <div class="timeline-item">
+                    <img src="img/inria.png" class="timeline-logo" alt="INRIA">
+                    <span class="timeline-date">2012 — 2015</span>
+                    <div class="timeline-content">
+                        <h3>PhD in applied mathematics (INRIA)</h3>
+                        <p style="margin-top: 0.25rem;">Discontinuous Galerkin time-domain methods for nano-optics</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- /*****************************/ -->
-        <!-- /***** Portfolio section *****/ -->
-        <!-- /*****************************/ -->
-
-        <section class="portfolio separateSection">
-            <div class="content">
-                <div class="sectionTitle extraPadding upperCase">Selected works</div>
-
-                <!-- /***** Column 1 *****/ -->
-                <div class="column">
-
-                    <div class="figure">
-                        <img src="img/aneurysm.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">GNN models for flow computation in aneurysms</div>
-                                    <p>I am working with <a href="https://donsetpg.github.io/blog/">P. Garnier</a> and E. Hachem in the context of <a href="https://cure-erc.github.io/">ERC Cure</a> on graph neural network models for flow computation in intracranial aneurysms.</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="timeline-item">
+                    <img src="img/ensta.png" class="timeline-logo" alt="ENSTA ParisTech">
+                    <span class="timeline-date">2009 — 2012</span>
+                    <div class="timeline-content">
+                        <h3>Engineering degree (ENSTA ParisTech)</h3>
+                        <p style="margin-top: 0.25rem;">Specialized in applied mathematics</p>
                     </div>
-
-                    <div class="figure">
-                        <img src="img/beacon.png">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">A benchmark library for DRL-based flow control</div>
-                                    <p><a href="https://github.com/jviquerat/beacon">Beacon</a> is a small library that proposes single-file flow control environments in python, to benchmark and tune DRL algorithms.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/rayleigh.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">DRL for natural convection control</div>
-                                    <p>In the context of a benchmark library, I re-implemented an environment from Beintema et al. which aims at controlling the Rayleigh-Benard convection cell with bottom plate temperatures actuators.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/shkadov.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">DRL for fluid film control</div>
-                                    <p>For <a href="https://arxiv.org/abs/2304.12330">this paper</a>, I re-implemented a CFD environment from Belus et al. based on the Shkadov equations, which aims at controlling the instabilities in a falling liquid film.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/dem.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">Discrete element method</div>
-                                    <p>I wrote a small python-based DEM solver, available <a href="https://github.com/jviquerat/dem">here</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/diogenes.jpg">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">Diogenes</div>
-                                    <p>Between 2015 and 2018, I have led the development of the <a href="https://diogenes.inria.fr/">Diogenes</a> software suite. It is based on discontinuous Galerkin methods, and includes advanced features for the solving of nanophotonics problems in time- and frequency-domain.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/dielectricReflectarray.png">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">Dielectric metasurface</div>
-                                    <p>During my PhD, I made a short numerical study on the effects of lithography defects on the behavior of reflectarrays (see <a href="https://hal.archives-ouvertes.fr/tel-01272010v8">here</a>). Here, a non-cartesian doubly-periodic anisotropic metasurface is used to deflect a normally-incident plane wave with a non-cartesian angle.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> <!-- End column 1 -->
-
-                <!-- /***** Column 2 *****/ -->
-                <div class="column">
-
-                    <div class="figure">
-                        <img src="img/emstack.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">Mixed-variable optimization</div>
-                                    <p>I developed an extension of the PBO method to handle problems with mixed discrete/continuous variables. Here, the optimization of a dielectric mirror with 40 parameters for a maximal reflectance (20 for the materials of the layers, 20 for their thicknesses).</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/mixing.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">DRL for mixing</div>
-                                    <p>I designed a control problem in which an agents learns to mix a passive scalar quantity in a square cavity using boundary velocities control.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/dgf.png">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">Dragonfly</div>
-                                    <p><a href="https://github.com/jviquerat/dragonfly">Dragonfly</a> is a DRL library designed for modularity and easy experimentation. See related publication <a href="https://arxiv.org/abs/2505.03778">here</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/lbm.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">LBM solver</div>
-                                    <p>I wrote a small python-based LBM solver, available <a href="https://github.com/jviquerat/lbm">here</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/heat.png">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">PBO for conjugate heat transfer</div>
-                                    <p>I was recently involved in a project with E. Hachem, P. Meliga and H. Ghraieb concerned with the use of single-step DRL for the passive control of heat transfer problems. See related publication <a href="https://www.sciencedirect.com/science/article/pii/S0021999121002126?via%3Dihub">here</a> and <a href="https://arxiv.org/abs/2011.15035">here</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/colorFilterFieldMap.png">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">PBC with oblique incidence</div>
-                                    <p>I worked on the extension of the field transform technique to handle polychromatic plane wave analysis at oblique incidence with periodic boundary conditions in time-domain. Here, a doubly periodic transmittive color filter illuminated from below with a 30 degrees incidence angle. See related publication <a href="https://smai-jcm.centre-mersenne.org/article/SMAI-JCM_2019__5__131_0.pdf">here</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/modeConverter.png">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">Polychromatic pulses in waveguides</div>
-                                    <p>I developed a specific source module able to take into account mode dispersion (index and field profile) to propagate polychromatic pulses in waveguides. The mode solution and the dispersion relation can be analytic, or provided through external files. Here, a TE01-to-TE02 mode converter is simulated on a 2 GHz large spectrum. See related publication <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/mop.31840">here</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> <!-- End column 2 -->
-
-                <!-- /***** Column 3 *****/ -->
-                <div class="column">
-
-                    <div class="figure">
-                        <img src="img/pentagon.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">Mesh algorithms</div>
-                                    <p>I have been working on various mesh algorithms in a new FE framework. Here, successive interface fittings of a pentagon on a base Delaunay mesh.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/turek.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">DRL for drag reduction</div>
-                                    <p>I reproduced a DRL-based flow control case from Rabault et al. for an upcoming technical paper. Here, the agent controls two small jets at the top and bottom of the cylinder.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/packing_pbo.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">PBO for packing</div>
-                                    <p>I've recently been testing the PBO algorithm on packing problems, and obtained results similar to litterature for up to 26 degrees of freedom.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/lorenz_pbo.gif">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">PBO</div>
-                                    <p>I developped an optimization technique based on policy gradient methods and evolution strategies. Here, it is used to design a control law for the Lorenz attractor. See related publication <a href="https://arxiv.org/abs/2104.06175">here</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/hybrid.png">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">Multi-element meshes</div>
-                                    <p>The basis library of the <a href="https://diogenes.inria.fr/">Diogenes</a> software suite is able to handle multi-element meshes composed of both hexahedra and tetrahedra (reading, neighbor-finding, partitionning, ...). Here, a hybrid mesh processed for the Diogenes-HDGFD solver.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="figure">
-                        <img src="img/curv.jpg">
-                        <div class="caption">
-                            <div class="blur"></div>
-                            <div class="captionContent">
-                                <div class="captionText">
-                                    <div class="captionTitle">Curvilinear elements in a nanosphere dimer</div>
-                                    <p>A part of my PhD was dedicated to the study of isoparametric elements in nanophotonics computations (see <a href="https://hal.archives-ouvertes.fr/tel-01272010v8">here</a>). Here, we show a resonance in the gap between two metallic nanospheres discretized with quadratic tetrahedra.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> <!-- End column 3 -->
+                </div>
 
             </div>
         </section>
 
-        <!-- /***************************/ -->
-        <!-- /***** Contact section *****/ -->
-        <!-- /***************************/ -->
+        <section class="section">
+            <h2>Selected works</h2>
+            <div class="portfolio-grid">
 
-        <section class="contact separateSection">
-            <div class="content">
-                <div class="sectionTitle upperCase">Contact</div>
-                <a href="mailto:jonathan.viquerat@mines-paristech.fr">
-                    <i class="fa fa-envelope fa-2x fa-lg" aria-hidden="true"></i>
+                <!-- ROW 1 -->
+                <div class="portfolio-card">
+                    <img src="img/aneurysm.gif" alt="GNN models for flow computation in aneurysms">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">GNN for flow computation</span>
+                        <p class="portfolio-desc">Graph neural network models for flow computation in intracranial aneurysms with ERC Cure.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <img src="img/emstack.gif" alt="Mixed-variable optimization">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">Mixed-variable optimization</span>
+                        <p class="portfolio-desc">Extension of the PBO method to handle mixed discrete/continuous variables.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <img src="img/pentagon.gif" alt="Mesh algorithms">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">Mesh algorithms</span>
+                        <p class="portfolio-desc">Successive interface fittings of a pentagon on a base Delaunay mesh.</p>
+                    </div>
+                </div>
+
+                <!-- ROW 2 -->
+                <a href="https://github.com/jviquerat/beacon" class="portfolio-card" target="_blank">
+                    <img src="img/beacon.png" alt="A benchmark library for DRL-based flow control">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">Beacon</span>
+                        <p class="portfolio-desc">A benchmark library for DRL-based flow control in python.</p>
+                    </div>
                 </a>
+
+                <div class="portfolio-card">
+                    <img src="img/mixing.gif" alt="DRL for mixing">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">DRL for mixing</span>
+                        <p class="portfolio-desc">Learning to mix a passive scalar quantity using boundary velocities control.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <img src="img/turek.gif" alt="DRL for drag reduction">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">DRL drag reduction</span>
+                        <p class="portfolio-desc">Agent controlling two small jets at the top and bottom of a cylinder.</p>
+                    </div>
+                </div>
+
+                <!-- ROW 3 -->
+                <div class="portfolio-card">
+                    <img src="img/rayleigh.gif" alt="DRL for natural convection control">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">DRL for natural convection</span>
+                        <p class="portfolio-desc">Controlling the Rayleigh-Benard convection cell with bottom plate temperatures actuators.</p>
+                    </div>
+                </div>
+
+                <a href="https://arxiv.org/abs/2505.03778" class="portfolio-card" target="_blank">
+                    <img src="img/dgf.png" alt="Dragonfly">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">Dragonfly</span>
+                        <p class="portfolio-desc">A DRL library designed for modularity and easy experimentation in CFD.</p>
+                    </div>
+                </a>
+
+                <div class="portfolio-card">
+                    <img src="img/packing_pbo.gif" alt="PBO for packing">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">PBO for packing</span>
+                        <p class="portfolio-desc">Testing the PBO algorithm on packing problems.</p>
+                    </div>
+                </div>
+
+                <!-- ROW 4 -->
+                <a href="https://arxiv.org/abs/2304.12330" class="portfolio-card" target="_blank">
+                    <img src="img/shkadov.gif" alt="DRL for fluid film control">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">Fluid film control</span>
+                        <p class="portfolio-desc">DRL for fluid film control based on the Shkadov equations.</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/jviquerat/lbm" class="portfolio-card" target="_blank">
+                    <img src="img/lbm.gif" alt="LBM solver">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">LBM solver</span>
+                        <p class="portfolio-desc">A small python-based Lattice Boltzmann Method solver.</p>
+                    </div>
+                </a>
+
+                <a href="https://arxiv.org/abs/2104.06175" class="portfolio-card" target="_blank">
+                    <img src="img/lorenz_pbo.gif" alt="PBO">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">PBO</span>
+                        <p class="portfolio-desc">Optimization based on policy gradient methods and evolution strategies.</p>
+                    </div>
+                </a>
+
+                <!-- ROW 5 -->
+                <a href="https://github.com/jviquerat/dem" class="portfolio-card" target="_blank">
+                    <img src="img/dem.gif" alt="Discrete element method">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">DEM Solver</span>
+                        <p class="portfolio-desc">A small python-based Discrete Element Method solver.</p>
+                    </div>
+                </a>
+
+                <a href="https://arxiv.org/abs/2011.15035" class="portfolio-card" target="_blank">
+                    <img src="img/heat.png" alt="PBO for conjugate heat transfer">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">PBO for heat transfer</span>
+                        <p class="portfolio-desc">Passive control of heat transfer problems with single-step DRL.</p>
+                    </div>
+                </a>
+
+                <a href="https://diogenes.inria.fr/" class="portfolio-card" target="_blank">
+                    <img src="img/hybrid.png" alt="Multi-element meshes">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">Multi-element meshes</span>
+                        <p class="portfolio-desc">Handling multi-element meshes composed of hexahedra and tetrahedra.</p>
+                    </div>
+                </a>
+
+                <!-- ROW 6 -->
+                <a href="https://diogenes.inria.fr/" class="portfolio-card" target="_blank">
+                    <img src="img/diogenes.jpg" alt="Diogenes">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">Diogenes</span>
+                        <p class="portfolio-desc">DG software suite for nanophotonics computations in time- and frequency-domain.</p>
+                    </div>
+                </a>
+
+                <a href="https://smai-jcm.centre-mersenne.org/article/SMAI-JCM_2019__5__131_0.pdf" class="portfolio-card" target="_blank">
+                    <img src="img/colorFilterFieldMap.png" alt="PBC with oblique incidence">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">PBC oblique incidence</span>
+                        <p class="portfolio-desc">Field transform technique for polychromatic plane waves.</p>
+                    </div>
+                </a>
+
+                <a href="https://hal.archives-ouvertes.fr/tel-01272010v8" class="portfolio-card" target="_blank">
+                    <img src="img/curv.jpg" alt="Curvilinear elements in a nanosphere dimer">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">Curvilinear elements</span>
+                        <p class="portfolio-desc">Resonance in the gap between two metallic nanospheres.</p>
+                    </div>
+                </a>
+
+                <!-- ROW 7 -->
+                <a href="https://hal.archives-ouvertes.fr/tel-01272010v8" class="portfolio-card" target="_blank">
+                    <img src="img/dielectricReflectarray.png" alt="Dielectric metasurface">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">Dielectric metasurface</span>
+                        <p class="portfolio-desc">Effects of lithography defects on the behavior of reflectarrays.</p>
+                    </div>
+                </a>
+
+                <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/mop.31840" class="portfolio-card" target="_blank">
+                    <img src="img/modeConverter.png" alt="Polychromatic pulses in waveguides">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-title">Polychromatic pulses</span>
+                        <p class="portfolio-desc">Taking into account mode dispersion to propagate polychromatic pulses in waveguides.</p>
+                    </div>
+                </a>
+
             </div>
         </section>
 
-        <!-- /***********************/ -->
-        <!-- /***** Final stuff *****/ -->
-        <!-- /***********************/ -->
+    </main>
 
-        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-        <script src="js/index.js"></script>
-
-    </body>
+</body>
 </html>
