@@ -337,6 +337,20 @@ p {
     margin-bottom: 1.5rem;
 }
 
+.article-content a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(13, 148, 136, 0.4);
+    transition: all 0.2s ease;
+}
+
+.article-content a:hover {
+    color: var(--text-primary);
+    text-decoration-color: var(--text-primary);
+}
+
 .article-content h2,
 .article-content h3 {
     font-family: var(--font-ui);
@@ -359,6 +373,23 @@ p {
     margin-right: 0;
     font-style: italic;
     color: var(--text-secondary);
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    display: block;
+    margin: 2.5rem auto 1rem auto;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.article-image-caption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    font-family: var(--font-ui);
 }
 
 /* --- Software Cards --- */
@@ -426,8 +457,8 @@ p {
 
 .blog-thumbnail {
     width: 140px;
-    height: 100px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     border-radius: 0.5rem;
     border: 1px solid var(--border-color);
     flex-shrink: 0;

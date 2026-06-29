@@ -37,192 +37,193 @@
         </article>
 
         <div class="article-content">
-            <p>Every scientific developer eventually writes code that looks perfectly logical but fails silently, usually because of a line that looks something like this:</p>
-            
-            <div class="code-block">if (a == b):<br>&nbsp;&nbsp;&nbsp;&nbsp;converged = True</div>
+            <p>While working on tests for the <a href="https://github.com/jviquerat/sparkle">sparkle library</a>, I stumbled on the excellent <a href="https://erich-friedman.github.io/packing/index.html">Erich Friedman's packing center</a>. Since the 1990s, Erich has been maintaining a database of the best known polygon packings, showcasing side by side beautiful and cursed configurations. Around 2023, square packings went viral for a time, triggering some funny posts:</p>
 
-            <p>If <code>a</code> and <code>b</code> are floating-point numbers (real values), a strict equality check is almost always a bug waiting to happen. Because of how floats are represented in memory (IEEE 754), operations introduce tiny rounding errors. For instance, <code>0.1 + 0.2</code> often evaluates to <code>0.30000000000000004</code>. Checking for strict equality fails because the computer's reality diverges slightly from pure mathematics.</p>
+            <img src="packing/twitter.png" alt="">
+            <p class="article-image-caption">Figure 1: The trend.</p>
 
-            <div style="text-align: center; margin: 2rem 0;">
-                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-family: var(--font-ui);">Strict Equality: <code>a == b</code></p>
-                <canvas id="strictCanvas" width="300" height="300" style="border: 1px solid var(--border-color); border-radius: 0.5rem;"></canvas>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">Only the infinitesimally thin diagonal line returns True.</p>
-            </div>
+            <!-- <p>If <code>a</code> and <code>b</code> are floating-point numbers (real values), a strict equality check is almost always a bug waiting to happen. Because of how floats are represented in memory (IEEE 754), operations introduce tiny rounding errors. For instance, <code>0.1 + 0.2</code> often evaluates to <code>0.30000000000000004</code>. Checking for strict equality fails because the computer's reality diverges slightly from pure mathematics.</p>
 
-            <h2>The Absolute Tolerance</h2>
-            <p>The first intuition to fix this is to check if the difference between the two numbers is "small enough." We define an absolute tolerance, often called <code>atol</code>.</p>
+                 <div style="text-align: center; margin: 2rem 0;">
+                 <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-family: var(--font-ui);">Strict Equality: <code>a == b</code></p>
+                 <canvas id="strictCanvas" width="300" height="300" style="border: 1px solid var(--border-color); border-radius: 0.5rem;"></canvas>
+                 <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">Only the infinitesimally thin diagonal line returns True.</p>
+                 </div>
 
-            <div class="code-block">abs(a - b) <= atol</div>
+                 <h2>The Absolute Tolerance</h2>
+                 <p>The first intuition to fix this is to check if the difference between the two numbers is "small enough." We define an absolute tolerance, often called <code>atol</code>.</p>
 
-            <div style="text-align: center; margin: 2rem 0;">
-                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-family: var(--font-ui);">Absolute Tolerance: <code>abs(a - b) <= atol</code></p>
-                <canvas id="atolCanvas" width="300" height="300" style="border: 1px solid var(--border-color); border-radius: 0.5rem;"></canvas>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">A strip of constant width. Fails to scale for very large values.</p>
-            </div>
+                 <div class="code-block">abs(a - b) <= atol</div>
 
-            <p>This works wonderfully when your values are close to 1. But what if you are dealing with astrophysical distances? If <code>a = 1e20</code> and <code>b = 1e20 + 1</code>, they are effectively identical, but an absolute tolerance of <code>1e-8</code> will say they are wildly different. Conversely, if you are working with sub-atomic scales (<code>1e-15</code>), an absolute tolerance of <code>1e-8</code> is catastrophically loose, and will treat completely different values as equal.</p>
+                 <div style="text-align: center; margin: 2rem 0;">
+                 <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-family: var(--font-ui);">Absolute Tolerance: <code>abs(a - b) <= atol</code></p>
+                 <canvas id="atolCanvas" width="300" height="300" style="border: 1px solid var(--border-color); border-radius: 0.5rem;"></canvas>
+                 <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">A strip of constant width. Fails to scale for very large values.</p>
+                 </div>
 
-            <h2>The Relative Tolerance</h2>
-            <p>To fix the scaling issue, we use a relative tolerance (<code>rtol</code>). Instead of a fixed small number, we define the tolerance as a fraction of the magnitude of the values being compared.</p>
+                 <p>This works wonderfully when your values are close to 1. But what if you are dealing with astrophysical distances? If <code>a = 1e20</code> and <code>b = 1e20 + 1</code>, they are effectively identical, but an absolute tolerance of <code>1e-8</code> will say they are wildly different. Conversely, if you are working with sub-atomic scales (<code>1e-15</code>), an absolute tolerance of <code>1e-8</code> is catastrophically loose, and will treat completely different values as equal.</p>
 
-            <div class="code-block">abs(a - b) <= rtol * max(abs(a), abs(b))</div>
+                 <h2>The Relative Tolerance</h2>
+                 <p>To fix the scaling issue, we use a relative tolerance (<code>rtol</code>). Instead of a fixed small number, we define the tolerance as a fraction of the magnitude of the values being compared.</p>
 
-            <div style="text-align: center; margin: 2rem 0;">
-                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-family: var(--font-ui);">Relative Tolerance: <code>abs(a-b) <= rtol * max(|a|, |b|)</code></p>
-                <canvas id="rtolCanvas" width="300" height="300" style="border: 1px solid var(--border-color); border-radius: 0.5rem;"></canvas>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">A wedge that scales dynamically. Fails completely at exactly zero.</p>
-            </div>
+                 <div class="code-block">abs(a - b) <= rtol * max(abs(a), abs(b))</div>
 
-            <p>This scales beautifully. Whether your numbers are <code>1e20</code> or <code>1e-15</code>, this checks if they agree to a certain number of significant digits (e.g., an <code>rtol</code> of <code>1e-5</code> means they match up to five significant digits). But relative tolerance has a fatal flaw: <strong>comparing against zero</strong>.</p>
-            
-            <p>If <code>a = 0.0</code> and <code>b = 1e-15</code>, the maximum magnitude is <code>1e-15</code>. The condition becomes <code>1e-15 <= rtol * 1e-15</code>. Unless your <code>rtol</code> is greater than 1 (which would be meaningless), this will always evaluate to false. Relative tolerance cannot reliably determine if a very small number is effectively zero.</p>
+                 <div style="text-align: center; margin: 2rem 0;">
+                 <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-family: var(--font-ui);">Relative Tolerance: <code>abs(a-b) <= rtol * max(|a|, |b|)</code></p>
+                 <canvas id="rtolCanvas" width="300" height="300" style="border: 1px solid var(--border-color); border-radius: 0.5rem;"></canvas>
+                 <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">A wedge that scales dynamically. Fails completely at exactly zero.</p>
+                 </div>
 
-            <h2>The Combined Approach</h2>
-            <p>Because absolute tolerance fails for large numbers and relative tolerance fails near zero, the standard approach used in robust scientific libraries (like Python's <code>numpy.isclose</code> or <code>math.isclose</code>) combines both into a single, elegant equation:</p>
+                 <p>This scales beautifully. Whether your numbers are <code>1e20</code> or <code>1e-15</code>, this checks if they agree to a certain number of significant digits (e.g., an <code>rtol</code> of <code>1e-5</code> means they match up to five significant digits). But relative tolerance has a fatal flaw: <strong>comparing against zero</strong>.</p>
+                 
+                 <p>If <code>a = 0.0</code> and <code>b = 1e-15</code>, the maximum magnitude is <code>1e-15</code>. The condition becomes <code>1e-15 <= rtol * 1e-15</code>. Unless your <code>rtol</code> is greater than 1 (which would be meaningless), this will always evaluate to false. Relative tolerance cannot reliably determine if a very small number is effectively zero.</p>
 
-            <div class="code-block">abs(a - b) <= atol + rtol * max(abs(a), abs(b))</div>
+                 <h2>The Combined Approach</h2>
+                 <p>Because absolute tolerance fails for large numbers and relative tolerance fails near zero, the standard approach used in robust scientific libraries (like Python's <code>numpy.isclose</code> or <code>math.isclose</code>) combines both into a single, elegant equation:</p>
 
-            <div style="text-align: center; margin: 2rem 0;">
-                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-family: var(--font-ui);">Combined: <code>atol + rtol * max(|a|, |b|)</code></p>
-                <canvas id="combinedCanvas" width="300" height="300" style="border: 1px solid var(--border-color); border-radius: 0.5rem;"></canvas>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">The wedge opens up at zero, solving the scaling problem globally.</p>
-            </div>
+                 <div class="code-block">abs(a - b) <= atol + rtol * max(abs(a), abs(b))</div>
 
-            <blockquote>
-                "The combined equation acts as a dynamic envelope. For large values, the relative term dominates. As values approach zero, the relative term vanishes, and the absolute term takes over."
-            </blockquote>
+                 <div style="text-align: center; margin: 2rem 0;">
+                 <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-family: var(--font-ui);">Combined: <code>atol + rtol * max(|a|, |b|)</code></p>
+                 <canvas id="combinedCanvas" width="300" height="300" style="border: 1px solid var(--border-color); border-radius: 0.5rem;"></canvas>
+                 <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">The wedge opens up at zero, solving the scaling problem globally.</p>
+                 </div>
 
-            <h3>How it works</h3>
-            <p>When the values are large (e.g., millions), the <code>atol</code> term (typically around <code>1e-8</code>) is practically zero compared to the relative term, so the check scales naturally with the magnitude. But when comparing tiny values or checking if a number equals exactly zero, the relative term vanishes, and the <code>atol</code> catches the noise, preventing the zero-comparison failure.</p>
+                 <blockquote>
+                 "The combined equation acts as a dynamic envelope. For large values, the relative term dominates. As values approach zero, the relative term vanishes, and the absolute term takes over."
+                 </blockquote>
 
-            <p>This combined approach gives you the best of both worlds. By setting an appropriate <code>rtol</code> (for your desired number of significant digits) and an <code>atol</code> (for your absolute zero threshold), your numerical algorithms will converge reliably, regardless of the scale of the physics you are simulating.</p>
-        </div>
-    </main>
+                 <h3>How it works</h3>
+                 <p>When the values are large (e.g., millions), the <code>atol</code> term (typically around <code>1e-8</code>) is practically zero compared to the relative term, so the check scales naturally with the magnitude. But when comparing tiny values or checking if a number equals exactly zero, the relative term vanishes, and the <code>atol</code> catches the noise, preventing the zero-comparison failure.</p>
 
-    <script>
-        function drawTolerancePlot(canvasId, conditionFunc) {
-            const canvas = document.getElementById(canvasId);
-            const displaySize = 300;
-            const dpr = window.devicePixelRatio || 1;
-            
-            // Set display size via CSS
-            canvas.style.width = displaySize + 'px';
-            canvas.style.height = displaySize + 'px';
-            
-            // Set actual backing size
-            canvas.width = displaySize * dpr;
-            canvas.height = displaySize * dpr;
-            
-            const ctx = canvas.getContext('2d');
-            
-            // 1. Draw the background and region (pixel-perfect at retina resolution)
-            const imgData = ctx.createImageData(canvas.width, canvas.height);
-            const minVal = -2.0;
-            const maxVal = 2.0;
-            
-            for (let py = 0; py < canvas.height; py++) {
-                const b = maxVal - (py / canvas.height) * (maxVal - minVal);
-                for (let px = 0; px < canvas.width; px++) {
-                    const a = minVal + (px / canvas.width) * (maxVal - minVal);
-                    
-                    const isTrue = conditionFunc(a, b);
-                    const idx = (py * canvas.width + px) * 4;
-                    
-                    if (isTrue) {
-                        // Teal #0D9488 (Tailwind teal-600) but semi-transparent for elegance
-                        imgData.data[idx] = 13;
-                        imgData.data[idx+1] = 148;
-                        imgData.data[idx+2] = 136;
-                        imgData.data[idx+3] = 160; 
-                    } else {
-                        // Very subtle off-white #fafafa
-                        imgData.data[idx] = 250;
-                        imgData.data[idx+1] = 250;
-                        imgData.data[idx+2] = 250;
-                        imgData.data[idx+3] = 255;
-                    }
-                }
-            }
-            ctx.putImageData(imgData, 0, 0);
+                 <p>This combined approach gives you the best of both worlds. By setting an appropriate <code>rtol</code> (for your desired number of significant digits) and an <code>atol</code> (for your absolute zero threshold), your numerical algorithms will converge reliably, regardless of the scale of the physics you are simulating.</p>
+                 </div>
+                 </main>
 
-            // Scale context for drawing lines and text so we don't have to multiply by dpr
-            ctx.scale(dpr, dpr);
-            const w = displaySize;
-            const h = displaySize;
+                 <script>
+                 function drawTolerancePlot(canvasId, conditionFunc) {
+                 const canvas = document.getElementById(canvasId);
+                 const displaySize = 300;
+                 const dpr = window.devicePixelRatio || 1;
+                 
+                 // Set display size via CSS
+                 canvas.style.width = displaySize + 'px';
+                 canvas.style.height = displaySize + 'px';
+                 
+                 // Set actual backing size
+                 canvas.width = displaySize * dpr;
+                 canvas.height = displaySize * dpr;
+                 
+                 const ctx = canvas.getContext('2d');
+                 
+                 // 1. Draw the background and region (pixel-perfect at retina resolution)
+                 const imgData = ctx.createImageData(canvas.width, canvas.height);
+                 const minVal = -2.0;
+                 const maxVal = 2.0;
+                 
+                 for (let py = 0; py < canvas.height; py++) {
+                 const b = maxVal - (py / canvas.height) * (maxVal - minVal);
+                 for (let px = 0; px < canvas.width; px++) {
+                 const a = minVal + (px / canvas.width) * (maxVal - minVal);
+                 
+                 const isTrue = conditionFunc(a, b);
+                 const idx = (py * canvas.width + px) * 4;
+                 
+                 if (isTrue) {
+                 // Teal #0D9488 (Tailwind teal-600) but semi-transparent for elegance
+                 imgData.data[idx] = 13;
+                 imgData.data[idx+1] = 148;
+                 imgData.data[idx+2] = 136;
+                 imgData.data[idx+3] = 160; 
+                 } else {
+                 // Very subtle off-white #fafafa
+                 imgData.data[idx] = 250;
+                 imgData.data[idx+1] = 250;
+                 imgData.data[idx+2] = 250;
+                 imgData.data[idx+3] = 255;
+                 }
+                 }
+                 }
+                 ctx.putImageData(imgData, 0, 0);
 
-            // 2. Draw subtle grid lines
-            ctx.strokeStyle = "rgba(0, 0, 0, 0.05)";
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            for(let i = 1; i <= 3; i++) {
-                const pos = i * (w / 4);
-                ctx.moveTo(pos, 0); ctx.lineTo(pos, h); // Vertical
-                ctx.moveTo(0, pos); ctx.lineTo(w, pos); // Horizontal
-            }
-            ctx.stroke();
+                 // Scale context for drawing lines and text so we don't have to multiply by dpr
+                 ctx.scale(dpr, dpr);
+                 const w = displaySize;
+                 const h = displaySize;
 
-            // 3. Draw diagonal a=b line (dashed)
-            ctx.strokeStyle = "rgba(13, 148, 136, 0.5)";
-            ctx.setLineDash([5, 5]);
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(0, h);
-            ctx.lineTo(w, 0);
-            ctx.stroke();
-            ctx.setLineDash([]); // reset dash
+                 // 2. Draw subtle grid lines
+                 ctx.strokeStyle = "rgba(0, 0, 0, 0.05)";
+                 ctx.lineWidth = 1;
+                 ctx.beginPath();
+                 for(let i = 1; i <= 3; i++) {
+                 const pos = i * (w / 4);
+                 ctx.moveTo(pos, 0); ctx.lineTo(pos, h); // Vertical
+                 ctx.moveTo(0, pos); ctx.lineTo(w, pos); // Horizontal
+                 }
+                 ctx.stroke();
 
-            // 4. Draw Main Axes
-            ctx.strokeStyle = "rgba(0, 0, 0, 0.25)";
-            ctx.lineWidth = 1.5;
-            ctx.beginPath();
-            ctx.moveTo(w/2, 0); ctx.lineTo(w/2, h); // Y-axis
-            ctx.moveTo(0, h/2); ctx.lineTo(w, h/2); // X-axis
-            ctx.stroke();
+                 // 3. Draw diagonal a=b line (dashed)
+                 ctx.strokeStyle = "rgba(13, 148, 136, 0.5)";
+                 ctx.setLineDash([5, 5]);
+                 ctx.lineWidth = 1;
+                 ctx.beginPath();
+                 ctx.moveTo(0, h);
+                 ctx.lineTo(w, 0);
+                 ctx.stroke();
+                 ctx.setLineDash([]); // reset dash
 
-            // 5. Draw Ticks and Labels
-            ctx.fillStyle = "#52525b"; // zinc-600
-            ctx.font = "11px Inter, sans-serif";
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
+                 // 4. Draw Main Axes
+                 ctx.strokeStyle = "rgba(0, 0, 0, 0.25)";
+                 ctx.lineWidth = 1.5;
+                 ctx.beginPath();
+                 ctx.moveTo(w/2, 0); ctx.lineTo(w/2, h); // Y-axis
+                 ctx.moveTo(0, h/2); ctx.lineTo(w, h/2); // X-axis
+                 ctx.stroke();
 
-            const ticks = [-2, -1, 1, 2];
-            ticks.forEach(t => {
-                // X-axis ticks
-                const px = w/2 + (t / 2) * (w/2);
-                ctx.beginPath(); ctx.moveTo(px, h/2 - 4); ctx.lineTo(px, h/2 + 4); ctx.stroke();
-                ctx.fillText(t, px, h/2 + 14);
-                
-                // Y-axis ticks
-                const py = h/2 - (t / 2) * (h/2);
-                ctx.beginPath(); ctx.moveTo(w/2 - 4, py); ctx.lineTo(w/2 + 4, py); ctx.stroke();
-                ctx.textAlign = "right";
-                ctx.fillText(t, w/2 - 8, py);
-                ctx.textAlign = "center"; // reset
-            });
+                 // 5. Draw Ticks and Labels
+                 ctx.fillStyle = "#52525b"; // zinc-600
+                 ctx.font = "11px Inter, sans-serif";
+                 ctx.textAlign = "center";
+                 ctx.textBaseline = "middle";
 
-            // Axis Names (a and b)
-            ctx.font = "bold 13px Inter, sans-serif";
-            ctx.fillStyle = "#27272a";
-            ctx.fillText("a", w - 12, h/2 - 14);
-            ctx.fillText("b", w/2 + 14, 12);
-        }
+                 const ticks = [-2, -1, 1, 2];
+                 ticks.forEach(t => {
+                 // X-axis ticks
+                 const px = w/2 + (t / 2) * (w/2);
+                 ctx.beginPath(); ctx.moveTo(px, h/2 - 4); ctx.lineTo(px, h/2 + 4); ctx.stroke();
+                 ctx.fillText(t, px, h/2 + 14);
+                 
+                 // Y-axis ticks
+                 const py = h/2 - (t / 2) * (h/2);
+                 ctx.beginPath(); ctx.moveTo(w/2 - 4, py); ctx.lineTo(w/2 + 4, py); ctx.stroke();
+                 ctx.textAlign = "right";
+                 ctx.fillText(t, w/2 - 8, py);
+                 ctx.textAlign = "center"; // reset
+                 });
 
-        // Configuration
-        const atol = 0.3;
-        const rtol = 0.3;
+                 // Axis Names (a and b)
+                 ctx.font = "bold 13px Inter, sans-serif";
+                 ctx.fillStyle = "#27272a";
+                 ctx.fillText("a", w - 12, h/2 - 14);
+                 ctx.fillText("b", w/2 + 14, 12);
+                 }
 
-        // 1. Strict
-        drawTolerancePlot('strictCanvas', (a, b) => Math.abs(a - b) < 0.02);
+                 // Configuration
+                 const atol = 0.3;
+                 const rtol = 0.3;
 
-        // 2. Absolute
-        drawTolerancePlot('atolCanvas', (a, b) => Math.abs(a - b) <= atol);
+                 // 1. Strict
+                 drawTolerancePlot('strictCanvas', (a, b) => Math.abs(a - b) < 0.02);
 
-        // 3. Relative
-        drawTolerancePlot('rtolCanvas', (a, b) => Math.abs(a - b) <= rtol * Math.max(Math.abs(a), Math.abs(b)));
+                 // 2. Absolute
+                 drawTolerancePlot('atolCanvas', (a, b) => Math.abs(a - b) <= atol);
 
-        // 4. Combined
-        drawTolerancePlot('combinedCanvas', (a, b) => Math.abs(a - b) <= atol + rtol * Math.max(Math.abs(a), Math.abs(b)));
-    </script>
+                 // 3. Relative
+                 drawTolerancePlot('rtolCanvas', (a, b) => Math.abs(a - b) <= rtol * Math.max(Math.abs(a), Math.abs(b)));
+
+                 // 4. Combined
+                 drawTolerancePlot('combinedCanvas', (a, b) => Math.abs(a - b) <= atol + rtol * Math.max(Math.abs(a), Math.abs(b)));
+                 </script> -->
 
 </body>
 </html>
