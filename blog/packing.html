@@ -37,10 +37,18 @@
         </article>
 
         <div class="article-content">
-            <p>While working on tests for the <a href="https://github.com/jviquerat/sparkle">sparkle library</a>, I stumbled on the excellent <a href="https://erich-friedman.github.io/packing/index.html">Erich Friedman's packing center</a>. Since the 1990s, Erich has been maintaining a database of the best known polygon packings, showcasing side by side beautiful and cursed configurations. Around 2023, square packings went viral for a time, triggering some funny posts:</p>
 
-            <img src="packing/twitter.png" alt="">
-            <p class="article-image-caption">Figure 1: The trend.</p>
+            <p>While working on tests for the <a href="https://github.com/jviquerat/sparkle">sparkle library</a>, I stumbled on the excellent <a href="https://erich-friedman.github.io/packing/index.html">Erich Friedman's packing center</a>. Since the 1990s, Erich has been maintaining a database of the best known polygon packings, showcasing side by side beautiful and cursed configurations. Around 2023, square packings went viral for a time, triggering some funny posts<side-note for="note-pack"></side-note>:</p>
+            <note-def id="note-pack">See also <a href="https://xkcd.com/2740/">this</a>, <a href="https://medium.com/@Mazequizzing/deeply-unsettling-asymmetric-patterns-in-mathematics-optimal-packing-of-17-squares-0171a792f165">this</a> and <a href="https://www.reddit.com/r/ExplainTheJoke/comments/1u9z5ho/i_dont_get_this_can_anyone_help_me/">this</a></note-def>
+
+            <img src="packing/twitter.png" alt="Twitter trend" style="width: 80%; max-width: 500px;">
+            <!-- <p class="article-image-caption">Figure 1: The trend.</p> -->
+
+            <p>After a few tests with a gradient-free approach, I decided to write polypack, a differentiable polygon packing library based on JAX. The core of the library relies on a differentiable version of the <a href="https://en.wikipedia.org/wiki/Hyperplane_separation_theorem">separation axis theorem</a>, which allows to determine polygon overlaps. To make it efficient and reliable, it required multiple numerical ingredients, including a relaxed augmented Lagrangian approach, a zooming multistart algorithm, and a symmetry reduction technique.<side-note for="note-paper"></side-note></p>
+
+            <note-def id="note-paper">Paper in preparation</note-def>
+
+            <p>I was able to make several contributions to Erich Friedman's website using the library, although the </p>
 
             <!-- <p>If <code>a</code> and <code>b</code> are floating-point numbers (real values), a strict equality check is almost always a bug waiting to happen. Because of how floats are represented in memory (IEEE 754), operations introduce tiny rounding errors. For instance, <code>0.1 + 0.2</code> often evaluates to <code>0.30000000000000004</code>. Checking for strict equality fails because the computer's reality diverges slightly from pure mathematics.</p>
 

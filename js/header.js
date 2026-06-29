@@ -37,3 +37,32 @@ class SiteHeader extends HTMLElement {
 }
 
 customElements.define('site-header', SiteHeader);
+
+class SideNote extends HTMLElement {
+    connectedCallback() {
+        if (this.hasAttribute('rendered')) return;
+        this.setAttribute('rendered', 'true');
+        this.style.display = 'inline';
+
+        const renderNote = () => {
+            const noteId = this.getAttribute('for');
+            let content = this.innerHTML;
+            
+            if (noteId) {
+                const defElement = document.getElementById(noteId);
+                if (defElement) {
+                    content = defElement.innerHTML;
+                }
+            }
+            this.innerHTML = `<span class="sidenote-number"></span><span class="sidenote">${content}</span>`;
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', renderNote);
+        } else {
+            renderNote();
+        }
+    }
+}
+
+customElements.define('side-note', SideNote);
