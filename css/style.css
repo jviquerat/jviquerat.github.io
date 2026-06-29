@@ -413,3 +413,22 @@ p {
 .software-link:hover {
     color: var(--text-primary);
 }
+
+.blog-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.blog-item-content {
+    flex: 1;
+}
+
+.blog-thumbnail {
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
