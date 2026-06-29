@@ -93,7 +93,7 @@ a {
 }
 
 .main-content {
-    max-width: 48rem;
+    max-width: 60rem;
     margin: 0 auto;
     padding: 4rem 1.5rem 8rem;
 }
@@ -206,8 +206,20 @@ p {
 /* --- Portfolio Grid (Hover Effect) --- */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .portfolio-card {
