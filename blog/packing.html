@@ -26,7 +26,7 @@
 
     <main class="main-content">
         <article class="article-header">
-            <h1 class="article-title">Polygon packing</h1>
+            <h1 class="article-title">Make packing great again</h1>
             <div class="blog-meta">
                 <span>Jonathan Viquerat</span>
                 <span>•</span>
@@ -44,12 +44,15 @@
             <img src="packing/twitter.png" alt="Twitter trend" style="width: 80%; max-width: 500px;">
             <!-- <p class="article-image-caption">Figure 1: The trend.</p> -->
 
-            <p>After a few tests with a gradient-free approach, I decided to write polypack, a differentiable polygon packing library based on JAX. The core of the library relies on a differentiable version of the <a href="https://en.wikipedia.org/wiki/Hyperplane_separation_theorem">separation axis theorem</a>, which allows to determine polygon overlaps. To make it efficient and reliable, it required multiple numerical ingredients, including a relaxed augmented Lagrangian approach, a zooming multistart algorithm, and a symmetry reduction technique.<side-note for="note-paper"></side-note></p>
+            <p>After a few tests with a gradient-free approach, I decided to write polypack, a differentiable polygon packing library based on JAX. The core of the library relies on a differentiable version of the <a href="https://en.wikipedia.org/wiki/Hyperplane_separation_theorem">separation axis theorem</a>, which allows to take the gradient of polygon overlaps. To make it efficient and reliable, it required multiple numerical ingredients, including a relaxed augmented Lagrangian approach, a recursive multistart algorithm, and a symmetry reduction technique.<side-note for="note-paper"></side-note></p>
 
             <note-def id="note-paper">Detailed description in an upcoming paper</note-def>
 
-            <p>2026 saw a sudden rise in the contributions to Erich Friedman's website (including mine). </p>
+            <p>The landscape of the cost function is highly rugged and non-convex, riddled with deep local minima. For identical polygons, it presents an exceptionnaly high number of symmetries, in particular (but not only) permutation symmetries, which grow with the factorial of the number of polygons. As an example, the problem of packing 9 identical triangles in a square requires 28 degrees of freedom, but has approximately 57 billion symmetric subspaces. </p>
 
+            
+        </div>
+    </main>
 
 </body>
 </html>

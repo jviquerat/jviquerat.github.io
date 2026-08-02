@@ -16,7 +16,7 @@ class SiteHeader extends HTMLElement {
                         <a href="${basePath}index.html">about</a>
                         <a href="${basePath}software.html">software</a>
                         <a href="${basePath}gallery.html">gallery</a>
-                        <a href="${basePath}blog.html">blog</a>
+                        <!-- <a href="${basePath}blog.html">blog</a> -->
                     </nav>
                 </div>
             </header>
